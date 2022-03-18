@@ -40,7 +40,6 @@ Core/Src/main.c \
 Core/Src/gpio.c \
 Core/Src/app_threadx.c \
 Core/Src/lptim.c \
-Core/Src/usb_otg.c \
 Core/Src/stm32h7xx_it.c \
 Core/Src/stm32h7xx_hal_msp.c \
 Core/Src/stm32h7xx_hal_timebase_tim.c \
@@ -225,6 +224,22 @@ Middlewares/ST/threadx/common/src/txe_timer_deactivate.c \
 Middlewares/ST/threadx/common/src/txe_timer_delete.c \
 Middlewares/ST/threadx/common/src/txe_timer_info_get.c  
 
+
+# Core/Src/usb_otg.c \
+
+
+C_SOURCES += \
+USB_DEVICE/App/usb_device.c \
+USB_DEVICE/App/usbd_desc.c \
+USB_DEVICE/App/usbd_cdc_if.c \
+USB_DEVICE/Target/usbd_conf.c \
+Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c \
+Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c \
+Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c \
+Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c
+
+C_SOURCES += $(wildcard ./User/*.c)
+
 # ASM sources
 ASM_SOURCES =  \
 startup_stm32h750xx.s \
@@ -297,6 +312,13 @@ C_INCLUDES =  \
 -IDrivers/CMSIS/Include \
 -IMiddlewares/ST/threadx/common/inc/ \
 -IMiddlewares/ST/threadx/ports/cortex_m7/gnu/inc/
+
+C_INCLUDES += \
+-IUser/ \
+-IUSB_DEVICE/App \
+-IUSB_DEVICE/Target \
+-IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc \
+-IMiddlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc
 
 
 # compile gcc flags

@@ -62,7 +62,7 @@ static TX_BYTE_POOL tx_app_byte_pool;
   * @param  first_unused_memory : Pointer to the first unused memory
   * @retval None
   */
-VOID tx_application_define(VOID *first_unused_memory)
+VOID tx_application_define2(VOID *first_unused_memory)
 {
   /* USER CODE BEGIN  tx_application_define */
 

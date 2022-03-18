@@ -98,8 +98,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_LPTIM3_Init();
-  MX_USB_OTG_HS_PCD_Init();
+  // MX_USB_OTG_HS_PCD_Init();
   /* USER CODE BEGIN 2 */
+  extern void MX_USB_DEVICE_Init();
+  MX_USB_DEVICE_Init();
 
   /* USER CODE END 2 */
 
