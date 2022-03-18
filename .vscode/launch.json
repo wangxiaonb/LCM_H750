@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/${workspaceFolderBasename}.elf",
+            "name": "Debug Microcontroller",
+            "serverpath":"C:\\Program Files (x86)\\SEGGER\\JLink\\JLinkGDBServerCL.exe",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "runToMain": true,
+            "device": "STM32H750VB",
+            "svdFile": "${workspaceRoot}/STM32H750x.svd",
+            // "preLaunchTask": "build"
+        },
+    ]
+}
