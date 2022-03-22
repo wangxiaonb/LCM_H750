@@ -22,7 +22,7 @@ TARGET = LCM_H750
 # debug build?
 DEBUG = 1
 # optimization
-OPT = -Og
+OPT = -O0
 
 
 #######################################
@@ -222,10 +222,8 @@ Middlewares/ST/threadx/common/src/txe_timer_change.c \
 Middlewares/ST/threadx/common/src/txe_timer_create.c \
 Middlewares/ST/threadx/common/src/txe_timer_deactivate.c \
 Middlewares/ST/threadx/common/src/txe_timer_delete.c \
-Middlewares/ST/threadx/common/src/txe_timer_info_get.c  
-
-
-# Core/Src/usb_otg.c \
+Middlewares/ST/threadx/common/src/txe_timer_info_get.c \
+Core/Src/usb_otg.c \
 
 
 C_SOURCES += \

@@ -61,11 +61,11 @@ while True:
 
         ret = usb_ctrl(dev, 2, 0, 0)  # start capturing
 
-        senddata=bytearray([0x12, 0x34, 0x56, 0x78])
+        senddata=bytearray([0x12, 0x34, 0x56, 0x78,0xaa])
         while True:
             ep_out.write(senddata, timeout)
             data = ep_in.read(len(senddata), timeout)
-            # print('length:',len(data))
+            print('length:',len(data))
     except:
         time.sleep(1)
         print('restart')
